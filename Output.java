@@ -54,12 +54,12 @@ class Output {			//表示機能
 			System.out.println("魔術師が所持している防具は,"+Gamedata.cArmor);
 			System.out.println("\n");
 		
-			System.out.println("タラミスのステータス");
+			System.out.println("女戦士のステータス");
 			for (Map.Entry<String, Integer> entry : Gamedata.fighterDState.entrySet()) {
 					System.out.println(entry.getKey() + " : " + entry.getValue());
 			}
-			System.out.println("タラミスが所持している武器は,"+Gamedata.dWeapon);
-			System.out.println("タラミスが所持している防具は,"+Gamedata.dArmor);
+			System.out.println("女戦士が所持している武器は,"+Gamedata.dWeapon);
+			System.out.println("女が所持している防具は,"+Gamedata.dArmor);
 			System.out.println("\n");
 		}
 		else if(Gamedata.partyMember[1]==1){		//2人仲間がいる
