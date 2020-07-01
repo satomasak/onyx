@@ -119,7 +119,7 @@ class Savedata{
 				for (int num : Gamedata.myItem.values()) {		//HushMapのget処理 アイテム用myItemのvalue値をすべて書き出す
 						pw.println(num);
 				}
-				pw.println(99);//キー値の最終判定のための書き込み
+				pw.println(99);//バリュー値の最終判定のための書き込み
 			
 			pw.close();
 			System.out.println("Itemデータのセーブが終わりました");
