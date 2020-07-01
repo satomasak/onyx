@@ -49,7 +49,7 @@ class Onx{		//mainメソッド
 							System.out.println("YかNを入力してください");
 						}
 					
-					}while(!("Y".equals(str1) ^ "y".equals(str1))&!(str1.equals("N") ^ str1.equals("n")));　//y、Y、n、N以外が入力されたら繰り返し終了
+					}while(!("Y".equals(str1) ^ "y".equals(str1))&!(str1.equals("N") ^ str1.equals("n")));　//y、Y、n、Nのいづれかが入力されたら繰り返し終了
 　				
 				}
 
