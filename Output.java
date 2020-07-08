@@ -1,7 +1,9 @@
 import java.util.Map;
 
 class Output {			//表示機能
-	public void mapOutput() {		//現在の階層を表示
+
+	//現在の階層を表示
+	public void mapOutput() {		
  		System.out.println("\n");
 		switch(Gamedata.mapDataLv){		//GamedataクラスのmapData参照
 			case 0:System.out.println("あなたは現在、ウトロ街にいます\n");break;
@@ -14,8 +16,8 @@ class Output {			//表示機能
 		System.out.println("\n");
  	}
 
-	
-	public void playerOutput() {		//プレイヤーのステータスと装備武器防具を表示
+	//プレイヤーのステータスと装備武器防具を表示
+	public void playerOutput() {		
 		System.out.println("\n");
 		System.out.println("あなたの現在のステータス");		//GamedataクラスのplayerState参照
 		
@@ -28,8 +30,8 @@ class Output {			//表示機能
 		System.out.println("\n");
 	}
 	
-	
-	public void partyOutput() {		//パーティメンバーのステータスと装備武器防具を表示
+	//パーティメンバーのステータスと装備武器防具を表示
+	public void partyOutput() {		
 		System.out.println("\n");
 		if(Gamedata.partyMember[0]==0){		//GamedataクラスのpartyMemberを使った仲間判定
 			System.out.println("あなたには、まだ仲間がいません\n");
@@ -91,36 +93,45 @@ class Output {			//表示機能
 		}
 	}
 	
-	
-	public void moneyOutput() {		//所持金表示
+	//所持金表示
+	public void moneyOutput() {		
 		System.out.println("\n");
 		System.out.println("金貨は"+Gamedata.playerState2[2][0]+"枚、所有しています\n");		//金貨枚数
 		System.out.println("\n");
 	}
 
-	
-	public void dateOutput() {		//日付表示
+	//日付表示
+	public void dateOutput() {		
 		System.out.println("\n");
 		System.out.println("今日の日付は10月"+Gamedata.playerState2[1][0]+"日です\n");			//日付表示
 		System.out.println("\n");
 	}
 	
-	
-	public void itemOutput() {			//所持アイテム、武器防具を表示
+	//所持アイテム、
+	public void itemOutput() {			
 		System.out.println("\n");
 		System.out.println("あなたの所持アイテム");		//GamedataクラスのmyItem参照
 		for (Map.Entry<String, Integer> entry : Gamedata.myItem.entrySet()) {		//HushMapのget処理
 				System.out.println(entry.getKey() + " : " + entry.getValue());
 		}
 		System.out.println("\n");
+	}
+	
+	//未装備の所持武器を表示
+	public void weaponOutput(){
 		System.out.println("誰も装備していない所持武器");		//GamedataクラスのmyItem参照
+
 		for (Map.Entry<String, Integer> entry : Gamedata.weaponPos.entrySet()) {		//HushMapのget処理
-				System.out.println(entry.getKey() + " : " + entry.getValue());
+				System.out.println(entry.getKey() +\t+ entry.getValue()+"個");
 		}
 		System.out.println("\n");
+	}
+	//未装備の所持防具を表示
+	public void armorOutput(){
 		System.out.println("誰も装備していない所持防具");		//GamedataクラスのmyItem参照
+		
 		for (Map.Entry<String, Integer> entry : Gamedata.armorPos.entrySet()) {		//HushMapのget処理
-				System.out.println(entry.getKey() + " : " + entry.getValue());
+				System.out.println(entry.getKey() +\t+ entry.getValue()+"個");
 		}
 		System.out.println("\n");
 	}
