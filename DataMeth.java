@@ -5,15 +5,18 @@ class DataMeth{
 	public void outState() {
 		try{			//例外処理
 			int b = 0;
-			while(b != 7){			//入力値が7の時終了。1から6ならば以下のcaseの処理を行う
-				System.out.println("何を確認しますか？\n 1/現在の場所を確認\n 2/あなたのステータスを確認\n 3/パーティメンバーのステータスを確認\n 4/所持金確認\n 5/日付を確認\n 6/所持アイテムを確認する\n 7/終了する\n 番号を入力してください");
+
+			//入力値が9の時終了。1から8ならば以下のswitchの処理を行う
+			while(b != 9){			
+				System.out.println("何を確認しますか？\n 1/現在の場所を確認\n 2/あなたのステータスを確認\n 3/パーティメンバーのステータスを確認\n 4/所持金確認\n 
+					5/日付を確認\n 6/所持アイテムを確認\n 7/未装備の所持武器を確認\n 8/未装備の所持防具を確認 9/終了する\n 番号を入力してください");
 					BufferedReader br =
 						new BufferedReader(new InputStreamReader(System.in));
 					String str = br.readLine();
 					b = Integer.parseInt(str);
 					
-					if(1>b | b >7) {
-							System.out.println("1～7の数字を入力してください");
+					if(1>b | b >9) {
+							System.out.println("1～9の数字を入力してください");
 						continue;
 					}
 					Output otp = new Output();//Outputクラスのインスタンス化
@@ -36,7 +39,13 @@ class DataMeth{
 						case 6://所持アイテム、武器防具を表示
 							otp.itemOutput();
 							break;
-						}				
+						case 7://未装備の所持武器を表示
+							otp.weaponOutput();
+							break;
+						case 8://未装備の所持防具を表示
+							otp.armorOutput();
+							break;
+					}				
 					
 				}
 				System.out.println("ステータス確認を終了します");
